@@ -108,6 +108,10 @@ pub use self::service::grpc_timeout::TimeoutExpired;
 #[cfg_attr(docsrs, doc(cfg(feature = "tls")))]
 pub use self::tls::Certificate;
 pub use axum::{body::BoxBody as AxumBoxBody, Router as AxumRouter};
+#[doc(inline)]
+/// A deprecated re-export. Please use `tonic::server::NamedService` directly.
+pub use crate::server::NamedService;
+
 pub use hyper::{Body, Uri};
 
 pub(crate) use self::service::executor::Executor;
