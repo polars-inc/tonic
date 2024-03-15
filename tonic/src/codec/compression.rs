@@ -1,4 +1,3 @@
-use crate::{metadata::MetadataValue, Status};
 use bytes::{Buf, BytesMut};
 use crate::{codec::SliceBuffer, metadata::MetadataValue, Status};
 #[cfg(feature = "gzip")]
@@ -249,7 +248,7 @@ pub(crate) fn decompress(
 
     settings: CompressionSettings,
     compressed_buf: &mut SliceBuffer,
-    out_buf: &mut BytesMut,
+    out_buf: &mut SliceBuffer,
     len: usize,
 ) -> Result<(), std::io::Error> {
     let buffer_growth_interval = settings.buffer_growth_interval;

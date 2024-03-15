@@ -35,7 +35,6 @@ use crate::transport::Error;
 
 use self::recover_error::RecoverError;
 use super::service::{GrpcTimeout, ServerIo};
-use crate::body::BoxBody;
 use crate::server::NamedService;
 use crate::{body::BoxBody, codec::SliceBuffer};
 use http::{Request, Response};

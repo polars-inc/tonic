@@ -1,12 +1,6 @@
-use super::compression::{
-    compress, CompressionEncoding, CompressionSettings, SingleMessageCompressionOverride,
-};
-use super::{BufferSettings, EncodeBuf, Encoder, DEFAULT_MAX_SEND_MESSAGE_SIZE, HEADER_SIZE};
-use crate::{Code, Status};
-use bytes::{BufMut, Bytes, BytesMut};
 use super::{
-    compression::{compress, CompressionEncoding, SingleMessageCompressionOverride},
-    Encoder, SliceBuffer, DEFAULT_MAX_SEND_MESSAGE_SIZE, HEADER_SIZE,
+    compression::{compress, CompressionEncoding, SingleMessageCompressionOverride,CompressionSettings},
+    Encoder, SliceBuffer, DEFAULT_MAX_SEND_MESSAGE_SIZE, HEADER_SIZE,BufferSettings
 };
 use crate::{codec::EncodeBuf, Code, Status};
 use bytes::{Buf, BufMut};
@@ -100,7 +94,7 @@ where
         compression_override: SingleMessageCompressionOverride,
         max_message_size: Option<usize>,
     ) -> Self {
-
+        dbg!("HERRE");
         let buffer_settings = encoder.buffer_settings();
         let buf = SliceBuffer::with_capacity(SLICE_SIZE, buffer_settings.buffer_size);
 
